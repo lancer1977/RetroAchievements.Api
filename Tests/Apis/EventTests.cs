@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using PolyhydraGames.RetroAchievements.Events;
 
 namespace PolyhydraGames.RACheevos.Test.Apis;
 

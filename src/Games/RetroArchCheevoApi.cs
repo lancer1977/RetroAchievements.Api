@@ -1,6 +1,7 @@
-using PolyhydraGames.RetroAchievements.Users;
+ 
 
 namespace PolyhydraGames.RetroAchievements.Games;
+
 public class RetroArchCheevoApi : RestServiceBase, IRetroArchGameApi
 {
     public Dictionary<int, GameResponse> GameCache = new();
@@ -26,10 +27,10 @@ public class RetroArchCheevoApi : RestServiceBase, IRetroArchGameApi
         return Get<GameExtendedResponse>(url);
     }
 
-    public Task<HashResponse> GetGameHashes(int gameId )
+    public Task<GameHashesResponse> GetGameHashes(int gameId )
     {
         var url = GetBaseUrl().Id(gameId);
-        return Get<HashResponse>(url);
+        return Get<GameHashesResponse>(url);
     }
 
     public Task<AchievementCountResponse> GetAchievementCount(int gameId)

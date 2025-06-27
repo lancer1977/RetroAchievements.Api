@@ -4,7 +4,7 @@ namespace PolyhydraGames.RetroAchievements.Tickets;
 
 public class RetroArchTicketApi : RestServiceBase, IRetroArchTicketApi
 {
-    private List<GameAndHash> _cache;
+    private List<GameAndHashResponse> _cache;
     public RetroArchTicketApi(ICheevoAuth authConfig, HttpClient client) : base(authConfig, client) { }
     public Task<IEnumerable<GameConsole>> GetConsoleIDs()
     {
@@ -12,11 +12,11 @@ public class RetroArchTicketApi : RestServiceBase, IRetroArchTicketApi
         return Get<IEnumerable<GameConsole>>(url);
     }
 
-    public async Task<IEnumerable<GameAndHash>> GetGameList(int systemId, bool gamesWithAchievementsOnly = false, bool returnHashes = false, bool resetCache = false)
+    public async Task<IEnumerable<GameAndHashResponse>> GetGameList(int systemId, bool gamesWithAchievementsOnly = false, bool returnHashes = false, bool resetCache = false)
     {
         if (_cache != null) return _cache;
         var url = GetBaseUrl().Id(systemId).ParamBool("f", gamesWithAchievementsOnly).ParamBool("h", returnHashes);
-        var result = await Get<IEnumerable<GameAndHash>>(url);
+        var result = await Get<IEnumerable<GameAndHashResponse>>(url);
         if (result != null && result.Any()) ;
         {
             _cache = result.ToList();

@@ -1,6 +1,7 @@
 using PolyhydraGames.Core.Models;
 using System.Diagnostics;
 using System.Text;
+using PolyhydraGames.RetroAchievements.Users;
 
 namespace PolyhydraGames.RACheevos.Test.Apis;
 

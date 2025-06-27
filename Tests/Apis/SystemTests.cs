@@ -1,3 +1,6 @@
+using PolyhydraGames.RetroAchievements.Systems;
+using PolyhydraGames.RetroAchievements.Tickets;
+
 namespace PolyhydraGames.RACheevos.Test.Apis;
 
 public class TicketTests : BaseTests
@@ -77,7 +80,7 @@ public class SystemTests : BaseTests
         var result = await Api.GetConsoleIDs();
         foreach (var system in result)
         {
-            Console.WriteLine($"{system.Id}: {system.Name}");
+            Console.WriteLine($"{system.ID}: {system.Name}");
         }
         Assert.That(result.Any());
 

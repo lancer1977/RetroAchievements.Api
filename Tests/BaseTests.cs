@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Configuration;
+using PolyhydraGames.RetroAchievements;
 
 namespace PolyhydraGames.RACheevos.Test;
 public abstract class BaseTests

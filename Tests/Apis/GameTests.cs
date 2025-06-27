@@ -1,4 +1,5 @@
 using PolyhydraGames.Extensions;
+using PolyhydraGames.RetroAchievements.Games;
 
 namespace PolyhydraGames.RACheevos.Test.Apis;
 

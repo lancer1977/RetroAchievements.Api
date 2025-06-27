@@ -3,14 +3,14 @@ namespace PolyhydraGames.RetroAchievements.Systems;
 
 public class RetroArchSystemApi : RestServiceBase, IRetroArchSystemApi
 {
-    private static Dictionary<int, List<GameAndHash>> _cache = new Dictionary<int, List<GameAndHash>>();
-    public static List<GameConsole>? ConsolesCache { get; private set; }
+    private static Dictionary<int, GameAndHashResponse> _cache = new Dictionary<int, GameAndHashResponse>();
+    public static ConsoleIDsResponse? ConsolesCache { get; private set; }
     public RetroArchSystemApi(ICheevoAuth authConfig, HttpClient client) : base(authConfig, client) { }
-    public async ValueTask<List<GameConsole>> GetConsoleIDs()
+    public async ValueTask<ConsoleIDsResponse> GetConsoleIDs()
     {
         if (ConsolesCache != null && ConsolesCache.Any()) return ConsolesCache;
         var url = GetBaseUrl();
-        var results = await Get<List<GameConsole>>(url);
+        var results = await Get<ConsoleIDsResponse>(url);
         if (results != null && results.Any())
         {
             ConsolesCache = results;
@@ -19,15 +19,15 @@ public class RetroArchSystemApi : RestServiceBase, IRetroArchSystemApi
         return ConsolesCache ?? [];
     }
 
-    public async ValueTask<List<GameAndHash>> GetGameList(int systemId, bool withAchievementsOnly = false, bool returnHashes = false, bool resetCache = false)
+    public async ValueTask<GameAndHashResponse> GetGameList(int systemId, bool withAchievementsOnly = false, bool returnHashes = false, bool resetCache = false)
     {
         if (resetCache) _cache.Remove(systemId);
         if (_cache.TryGetValue(systemId, out var list)) return list;
         var url = GetBaseUrl().Id(systemId).F(withAchievementsOnly).H(returnHashes);
-        var result = await Get<List<GameAndHash>>(url);
+        var result = await Get<GameAndHashResponse>(url);
         if (result != null && result.Any())
         {
-            _cache[systemId] = result.ToList();
+            _cache[systemId] = result;
         }
         return _cache[systemId];
     }

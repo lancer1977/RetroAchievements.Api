@@ -1,3 +1,5 @@
+using PolyhydraGames.RetroAchievements.Feeds;
+
 namespace PolyhydraGames.RACheevos.Test.Apis;
 
 public class FeedTests : BaseTests

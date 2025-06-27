@@ -1,11 +1,10 @@
 namespace PolyhydraGames.RetroAchievements.Systems;
 
-public class GameConsole
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public string IconURL { get; set; }
-    public bool Active { get; set; }
-    public bool IsGameSystem { get; set; }
-
-}
+public class ConsoleIDsResponse : List<GameConsole>;
+public record GameConsole(
+    [property: JsonPropertyName("ID")] int ID,
+    [property: JsonPropertyName("Name")] string Name,
+    [property: JsonPropertyName("IconURL")] string IconURL,
+    [property: JsonPropertyName("Active")] bool Active,
+    [property: JsonPropertyName("IsGameSystem")] bool IsGameSystem
+);
