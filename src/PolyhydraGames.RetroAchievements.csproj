@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;net6.0;net7.0;net8.0;net9.0</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<Title>Retroarch Cheevos</Title>
+		<Authors>Dread Breadcrumb</Authors>
+		<Description>A C# wrapper for the Retroarch Cheevo rest API</Description>
+		<Copyright>2024</Copyright>
+		<PackageProjectUrl>https://github.com/lancer1977/retroarch_cheevos</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/lancer1977/retroarch_cheevos</RepositoryUrl>
+		<RepositoryType>git</RepositoryType> 
+		<PackageId>PolyhydraGames.Retroarch.Cheevos</PackageId> 
+	</PropertyGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+		<PackageReference Include="System.Text.Json" Version="9.0.6" />
+	</ItemGroup>
+
+	<!--<ItemGroup>
+	  <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.6" />
+	  <PackageReference Include="PolyhydraGames.Core.Interfaces" Version="2.0.0.43" />
+	</ItemGroup>-->
+
+ 
+	<ItemGroup>
+	  <PackageReference Update="SonarAnalyzer.CSharp" Version="10.12.0.118525" />
+	</ItemGroup>
+
+ 
+	<ItemGroup>
+	  <Folder Include="Leaderboards\" />
+	  <Folder Include="Comments\" />
+	</ItemGroup>
+
+ 
+ 
+</Project>

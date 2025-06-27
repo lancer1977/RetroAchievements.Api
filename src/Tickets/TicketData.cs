@@ -1,0 +1,30 @@
+namespace PolyhydraGames.RetroAchievements.Tickets;
+
+  public record TicketData(
+        [property: JsonPropertyName("ID")] int ID,
+        [property: JsonPropertyName("AchievementID")] int AchievementID,
+        [property: JsonPropertyName("AchievementTitle")] string AchievementTitle,
+        [property: JsonPropertyName("AchievementDesc")] string AchievementDesc,
+        [property: JsonPropertyName("AchievementType")] object AchievementType,
+        [property: JsonPropertyName("Points")] int Points,
+        [property: JsonPropertyName("BadgeName")] string BadgeName,
+        [property: JsonPropertyName("AchievementAuthor")] string AchievementAuthor,
+        [property: JsonPropertyName("AchievementAuthorULID")] string AchievementAuthorULID,
+        [property: JsonPropertyName("GameID")] int GameID,
+        [property: JsonPropertyName("ConsoleName")] string ConsoleName,
+        [property: JsonPropertyName("GameTitle")] string GameTitle,
+        [property: JsonPropertyName("GameIcon")] string GameIcon,
+        [property: JsonPropertyName("ReportedAt")] DateTime ReportedAt,
+        [property: JsonPropertyName("ReportType")] int ReportType,
+        [property: JsonPropertyName("ReportState")] int ReportState,
+        [property: JsonPropertyName("Hardcore")] object Hardcore,
+        [property: JsonPropertyName("ReportNotes")] string ReportNotes,
+        [property: JsonPropertyName("ReportedBy")] string ReportedBy,
+        [property: JsonPropertyName("ReportedByULID")] string ReportedByULID,
+        [property: JsonPropertyName("ResolvedAt")] DateTime ResolvedAt,
+        [property: JsonPropertyName("ResolvedBy")] string ResolvedBy,
+        [property: JsonPropertyName("ResolvedByULID")] string ResolvedByULID,
+        [property: JsonPropertyName("ReportStateDescription")] string ReportStateDescription,
+        [property: JsonPropertyName("ReportTypeDescription")] string ReportTypeDescription,
+        [property: JsonPropertyName("URL")] string URL
+    );

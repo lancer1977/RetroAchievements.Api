@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "files", "files", "{3AF77599-53C2-4C83-A4DA-657D51D805B0}"
+	ProjectSection(SolutionItems) = preProject
+		.pipelines\cheevos.yml = .pipelines\cheevos.yml
+		directory.build.props = directory.build.props
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolyhydraGames.RetroAchievements", "src\PolyhydraGames.RetroAchievements.csproj", "{2FD64B9B-9115-445B-A10C-D6F26DD8AF80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolyhydraGames.RACheevos.Test", "Tests\PolyhydraGames.RACheevos.Test.csproj", "{2A902F42-07A4-36CB-298D-F4C3E5930948}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FD64B9B-9115-445B-A10C-D6F26DD8AF80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FD64B9B-9115-445B-A10C-D6F26DD8AF80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FD64B9B-9115-445B-A10C-D6F26DD8AF80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FD64B9B-9115-445B-A10C-D6F26DD8AF80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A902F42-07A4-36CB-298D-F4C3E5930948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A902F42-07A4-36CB-298D-F4C3E5930948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A902F42-07A4-36CB-298D-F4C3E5930948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A902F42-07A4-36CB-298D-F4C3E5930948}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {271F58AA-7D29-45BC-8D4C-4DA964F2480B}
+	EndGlobalSection
+EndGlobal
