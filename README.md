@@ -13,7 +13,7 @@ RetroArch Cheevos API is a **C# implementation** of the RetroAchievements API, d
 - 👤 **Users API**: Retrieve user statistics and progress.
 
 ## Usage
-Install via nuget: https://www.nuget.org/packages/PolyhydraGames.RACheevos
+Install via nuget: https://www.nuget.org/packages/PolyhydraGames.Retroarch.Cheevos
 The **Cheevos API** is implemented as a **C# class library** that can be used in your own projects.
 To use the API, create an instance of the relevant **Cheevos** class.
 
