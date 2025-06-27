@@ -1,8 +1,8 @@
 # Starter pipeline
-name: 1.0.1.$(rev:r)
+name: 1.0.2.$(rev:r)
 variables: 
 - name: Project.Path
-  value: '**/PolyhydraGames.RACheevos.csproj'
+  value: '**/PolyhydraGames.RetroAchievements.csproj'
 - name: BuildConfiguration
   value: Release
 trigger:
