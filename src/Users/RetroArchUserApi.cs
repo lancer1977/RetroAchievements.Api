@@ -1,10 +1,10 @@
 namespace PolyhydraGames.RetroAchievements.Users;
 
 public class RetroArchUserApi : RestServiceBase, IRetroArchUserApi
-{ 
+{
 
-    public RetroArchUserApi(ICheevoAuth authConfig, HttpClient client ) : base(authConfig, client)
-    { 
+    public RetroArchUserApi(ICheevoAuth authConfig, HttpClient client) : base(authConfig, client)
+    {
     }
 
     public Task<GameInfoAndUserProgressResponse?> GetGameInfoAndUserProgress(string gameID, string userName)
@@ -49,10 +49,10 @@ public class RetroArchUserApi : RestServiceBase, IRetroArchUserApi
         return Get<IReadOnlyList<RecentGame>>(url);
     }
 
-    public Task<GetUserSummaryResponse?> GetUserSummary(string userName, int gameCount = 0, int achievementCount = 10)
+    public Task<UserSummaryResponse?> GetUserSummary(string userName, int gameCount = 0, int achievementCount = 10)
     {
         var url = GetBaseUrl().User(userName).G(gameCount).A(achievementCount);
-        return Get<GetUserSummaryResponse>(url);
+        return Get<UserSummaryResponse>(url);
     }
 
     public Task<IReadOnlyList<GameCompletion>?> GetUserCompletedGames(string userName)
@@ -136,7 +136,7 @@ public class RetroArchUserApi : RestServiceBase, IRetroArchUserApi
 
     public Task<Dictionary<int, GameProgress>?> GetUserProgress(string userName, IReadOnlyList<int> achievementIds)
     {
-        var url = GetBaseUrl().User(userName).I(string.Join(",", achievementIds.Select(x=>x.ToString())));
+        var url = GetBaseUrl().User(userName).I(string.Join(",", achievementIds.Select(x => x.ToString())));
         return Get<Dictionary<int, GameProgress>>(url);
     }
 

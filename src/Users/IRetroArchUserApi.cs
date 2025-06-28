@@ -39,7 +39,7 @@ public interface IRetroArchUserApi
     //https://retroachievements.org/API/API_GetUserSummary.php?u=xelnia&g=1&a=2
     //Task<GameInfoAndUserProgressResponse> GetGameInfoAndUserProgress(string gameID, string userName);
 
-    Task<GetUserSummaryResponse?> GetUserSummary(string userName, int gameCount = 0, int achievementCount = 10);
+    Task<UserSummaryResponse?> GetUserSummary(string userName, int gameCount = 0, int achievementCount = 10);
     //https://retroachievements.org/API/API_GetUserCompletedGames.php?u=MaxMilyin
     Task<IReadOnlyList<GameCompletion>?> GetUserCompletedGames(string userName);
     //Task<IReadOnlyList<UserRecentlyPlayedGame>> GetUserRecentlyPlayedGames(string userName);

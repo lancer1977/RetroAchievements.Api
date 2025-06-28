@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using PolyhydraGames.RetroAchievements;
 
@@ -26,9 +27,10 @@ public abstract class BaseTests
 
     }
 
-    protected void Write(string line)
+    protected void WriteLine(string line)
     {
         Console.WriteLine(line);
+        Debug.WriteLine(line);
     }
 
 }

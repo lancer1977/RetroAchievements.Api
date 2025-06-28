@@ -1,21 +1,22 @@
-namespace PolyhydraGames.RetroAchievements.Users;
-public class ActiveClaim
-{
-    public int ID { get; set; }
-    public string User { get; set; }
-    public int GameID { get; set; }
-    public string GameTitle { get; set; }
-    public string GameIcon { get; set; }
-    public int ConsoleID { get; set; }
-    public string ConsoleName { get; set; }
-    public int ClaimType { get; set; }
-    public int SetType { get; set; }
-    public int Status { get; set; }
-    public int Extension { get; set; }
-    public int Special { get; set; }
-    public string Created { get; set; }
-    public string DoneTime { get; set; }
-    public string Updated { get; set; }
-    public int UserIsJrDev { get; set; }
-    public int MinutesLeft { get; set; }
-}
+namespace PolyhydraGames.RetroAchievements.Users; 
+public record ActiveClaim(
+    [property: JsonPropertyName("ID")] int ID,
+    [property: JsonPropertyName("User")] string User,
+    [property: JsonPropertyName("ULID")] string ULID,
+    [property: JsonPropertyName("GameID")] int GameID,
+    [property: JsonPropertyName("GameTitle")] string GameTitle,
+    [property: JsonPropertyName("GameIcon")] string GameIcon,
+    [property: JsonPropertyName("ConsoleID")] int ConsoleID,
+    [property: JsonPropertyName("ConsoleName")] string ConsoleName,
+    [property: JsonPropertyName("ClaimType")] int ClaimType,
+    [property: JsonPropertyName("SetType")] int SetType,
+    [property: JsonPropertyName("Status")] int Status,
+    [property: JsonPropertyName("Extension")] int Extension,
+    [property: JsonPropertyName("Special")] int Special,
+    [property: JsonPropertyName("Created")] DateTime Created,
+    [property: JsonPropertyName("DoneTime")] DateTime DoneTime,
+    [property: JsonPropertyName("Updated")] DateTime Updated,
+    [property: JsonPropertyName("UserIsJrDev")] int UserIsJrDev,
+    [property: JsonPropertyName("MinutesLeft")] int MinutesLeft
+);
+ 

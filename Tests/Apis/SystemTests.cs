@@ -80,7 +80,7 @@ public class SystemTests : BaseTests
         var result = await Api.GetConsoleIDs();
         foreach (var system in result)
         {
-            Console.WriteLine($"{system.ID}: {system.Name}");
+            WriteLine($"{system.ID}: {system.Name}");
         }
         Assert.That(result.Any());
 

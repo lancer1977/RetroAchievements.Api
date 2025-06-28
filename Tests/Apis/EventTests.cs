@@ -16,7 +16,7 @@ public class EventTests : BaseTests
     public async Task GetAchievementUnlocks()
     {
         var result = await Api.GetAchievementOfTheWeek();
-        Debug.WriteLine($"Event was:{result.Game.Title}");
+        WriteLine($"Event was:{result.Game.Title}");
         Assert.That(result != null);
     }
 }

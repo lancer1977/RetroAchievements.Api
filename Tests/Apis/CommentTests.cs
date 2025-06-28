@@ -30,7 +30,7 @@ public class CommentTests : BaseTests
         Trace.WriteLine($"Count:{result.Count}");
         foreach (var item in result.Results)
         {
-            Console.WriteLine($"Comment:{item.CommentText}");
+            WriteLine($"Comment:{item.CommentText}");
         }
         Assert.That(result.Count > 0);
     }

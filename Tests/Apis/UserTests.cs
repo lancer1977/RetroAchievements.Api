@@ -18,7 +18,7 @@ public class UserTests : BaseTests
     public async Task GetUserProfile()
     {
         var result = await Api.GetUserProfile(TestUser);
-        Console.WriteLine(result.ToJson());
+        WriteLine(result.ToJson());
         Assert.That(result.User == TestUser);
     }
 
@@ -26,7 +26,7 @@ public class UserTests : BaseTests
     public async Task GetUserRecentAchievements()
     {
         var result = await Api.GetUserRecentAchievements(TestUser, 100011);
-        Console.WriteLine(result.ToJson());
+        WriteLine(result.ToJson());
         Assert.That(result.Any());
     }
 
@@ -99,11 +99,11 @@ public class UserTests : BaseTests
         var resultEnum = await Api.GetUserRecentlyPlayedGames(TestUser, 30);
         var result = resultEnum.ToList();
         var count = result.Count;
-        //Console.WriteLine(result.ToJson());
+        //WriteLine(result.ToJson());
         for (var x = 1; x <= count; x++)
         {
-            Console.WriteLine(GetRecentGameHtml(x, result[x - 1]));
-            //   Console.WriteLine(GameMarkdownCell(x, result[x]));
+            WriteLine(GetRecentGameHtml(x, result[x - 1]));
+            //   WriteLine(GameMarkdownCell(x, result[x]));
         }
         Assert.That(result.Any());
     }
@@ -139,7 +139,7 @@ public class UserTests : BaseTests
         var builder = new StringBuilder();
 
         builder.Append("| " + count + "|");
-        //Console.WriteLine(item.ToJson());
+        //WriteLine(item.ToJson());
         var image = "<img height=\"120\" src=\"https://media.retroachievements.org" + item.ImageIcon + "\"> |";
         builder.Append(image);
         var lastPlayed = item.LastPlayed + " | ";
@@ -156,7 +156,7 @@ public class UserTests : BaseTests
     public async Task GetUserSummary()
     {
         var result = await Api.GetUserSummary(TestUser);
-        Debug.WriteLine(result.ToJson());
+        WriteLine(result.ToJson());
         Assert.That(result.LastGameID > 0);
     }
 
@@ -164,6 +164,9 @@ public class UserTests : BaseTests
     public async Task GetUserCompletedGames()
     {
         var result = await Api.GetUserCompletedGames(TestUser);
-
+        WriteLine(result.ToJson());
+        WriteLine("Count" + result.Count());
+        WriteLine(string.Join(",",result));
+        Assert.That(result.Any());
     }
 }

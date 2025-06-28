@@ -9,4 +9,6 @@ public class RankedUser
 
     [JsonPropertyName("3")]
     public int RetroPoints { get; set; }
+    [JsonPropertyName("4")]
+    public string ULID { get; set; }
 }

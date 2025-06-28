@@ -1,5 +1,3 @@
-using PolyhydraGames.RetroAchievements.Users;
-
 namespace PolyhydraGames.RetroAchievements.Games;
 public class GameHashesResponse
 {

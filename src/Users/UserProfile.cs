@@ -1,3 +1,5 @@
+namespace PolyhydraGames.RetroAchievements.Users;
+
 public record UserProfile(
     [property: JsonPropertyName("User")] string User,
     [property: JsonPropertyName("ULID")] string ULID,

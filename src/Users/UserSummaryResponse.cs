@@ -1,7 +1,7 @@
 namespace PolyhydraGames.RetroAchievements.Users;
 
 
-public record GetUserSummaryResponse(
+public record UserSummaryResponse(
     [property: JsonPropertyName("User")] string User,
     [property: JsonPropertyName("ULID")] string ULID,
     [property: JsonPropertyName("MemberSince")] DateTime MemberSince,
@@ -21,8 +21,8 @@ public record GetUserSummaryResponse(
     [property: JsonPropertyName("Rank")] int? Rank,
     [property: JsonPropertyName("RecentlyPlayedCount")] int RecentlyPlayedCount,
     [property: JsonPropertyName("RecentlyPlayed")] IReadOnlyList<RecentlyPlayed> RecentlyPlayed,
-    [property: JsonPropertyName("Awarded")] Awarded Awarded,
-    [property: JsonPropertyName("RecentAchievements")] RecentAchievements RecentAchievements,
+    [property: JsonPropertyName("Awarded")] Dictionary<string, Award> Awarded,
+    [property: JsonPropertyName("RecentAchievements")] Dictionary<string, object> RecentAchievements,
     [property: JsonPropertyName("LastGame")] LastGame LastGame,
     [property: JsonPropertyName("UserPic")] string UserPic,
     [property: JsonPropertyName("TotalRanked")] int TotalRanked,
@@ -54,8 +54,7 @@ public record AchievementLite(
     [property: JsonPropertyName("DateAwarded")] DateTime DateAwarded,
     [property: JsonPropertyName("HardcoreAchieved")] int HardcoreAchieved
 );
-
-public class Awarded : Dictionary<string, Award>;
+ 
 
 public record LastActivity(
     [property: JsonPropertyName("ID")] int ID,
@@ -85,8 +84,7 @@ public record LastGame(
     [property: JsonPropertyName("ReleasedAtGranularity")] string ReleasedAtGranularity,
     [property: JsonPropertyName("IsFinal")] int IsFinal
 );
-
-public class RecentAchievements : Dictionary<string, Dictionary<string, AchievementLite>>;
+ 
 
 public record RecentlyPlayed(
     [property: JsonPropertyName("GameID")] int GameID,
@@ -97,7 +95,7 @@ public record RecentlyPlayed(
     [property: JsonPropertyName("ImageTitle")] string ImageTitle,
     [property: JsonPropertyName("ImageIngame")] string ImageIngame,
     [property: JsonPropertyName("ImageBoxArt")] string ImageBoxArt,
-    [property: JsonPropertyName("LastPlayed")] string LastPlayed,
+    [property: JsonPropertyName("LastPlayed")] DateTime LastPlayed,
     [property: JsonPropertyName("AchievementsTotal")] int AchievementsTotal
 );
 
