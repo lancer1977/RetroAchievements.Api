@@ -5,8 +5,8 @@ namespace PolyhydraGames.RetroAchievements.Feeds;
 public interface IRetroArchFeedApi
 {
     Task<RecentGameAwardResponse?> GetRecentGameAwards(DateTime? date = null, int offset = 0, int count = 25, string kinds = null);
-    Task<IEnumerable<ActiveClaim>?> GetActiveClaims();
-    Task<IEnumerable<ActiveClaim>?> GetClaims();
-    Task<IEnumerable<RankedUser>?> GetTopTenUsers();
+    Task<IReadOnlyList<ActiveClaim>?> GetActiveClaims();
+    Task<IReadOnlyList<ActiveClaim>?> GetClaims();
+    Task<IReadOnlyList<RankedUser>?> GetTopTenUsers();
 }
 

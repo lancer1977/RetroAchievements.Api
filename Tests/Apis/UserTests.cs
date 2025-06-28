@@ -53,6 +53,7 @@ public class UserTests : BaseTests
     public async Task GetGameInfoAndUserProgress()
     {
         var result = await Api.GetGameInfoAndUserProgress(TestUser, TestGameId);
+        Assert.That(result.Achievements.Any());
     }
     [Test]
     public async Task GetUserCompletionProgress()
@@ -88,7 +89,7 @@ public class UserTests : BaseTests
     [Test]
     public async Task GetUserProgress()
     {
-        IEnumerable<int> achievementIds = new List<int> { 1, 2, 3 };
+        IReadOnlyList<int> achievementIds = new List<int> { 1, 2, 3 };
         var result = await Api.GetUserProgress(TestUser, achievementIds);
         Assert.That(result.Any());
     }

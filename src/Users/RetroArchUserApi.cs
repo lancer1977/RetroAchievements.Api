@@ -13,12 +13,12 @@ public class RetroArchUserApi : RestServiceBase, IRetroArchUserApi
         return Get<GameInfoAndUserProgressResponse>(url);
     }
 
-    public async Task<IEnumerable<RecentGame>?> GetUserRecentlyPlayedGames(string userName, int count = 50)
+    public async Task<IReadOnlyList<RecentGame>?> GetUserRecentlyPlayedGames(string userName, int count = 50)
     {
         return await GetUserRecentlyPlayedGamesFunc(userName, count);
     }
 
-    public async Task<List<RecentGame>> GetUserRecentlyPlayedGamesFunc(string userName, int count = 50)
+    public async Task<IReadOnlyList<RecentGame>?> GetUserRecentlyPlayedGamesFunc(string userName, int count = 50)
     {
         var items = new List<RecentGame>();
         if (count > 50)
@@ -37,16 +37,16 @@ public class RetroArchUserApi : RestServiceBase, IRetroArchUserApi
         return smallresult.ToList();
 
     }
-    public async Task<List<RecentGame>> GetUserWantToPlayList(string userName, int count = 50, int offset = 0)
+    public async Task<IReadOnlyList<RecentGame>?> GetUserWantToPlayList(string userName, int count = 50, int offset = 0)
     {
         var url = GetBaseUrl().User(userName).Count(count).Offset(offset);
         return await Get<List<RecentGame>>(url);
 
     }
-    private Task<IEnumerable<RecentGame>?> GetUserRecentlyPlayedGames(string userName, int count, int offset)
+    private Task<IReadOnlyList<RecentGame>?> GetUserRecentlyPlayedGames(string userName, int count, int offset)
     {
         var url = GetBaseUrl().User(userName).Count(count).Offset(offset);
-        return Get<IEnumerable<RecentGame>>(url);
+        return Get<IReadOnlyList<RecentGame>>(url);
     }
 
     public Task<GetUserSummaryResponse?> GetUserSummary(string userName, int gameCount = 0, int achievementCount = 10)
@@ -55,19 +55,19 @@ public class RetroArchUserApi : RestServiceBase, IRetroArchUserApi
         return Get<GetUserSummaryResponse>(url);
     }
 
-    public Task<IEnumerable<GameCompletion>?> GetUserCompletedGames(string userName)
+    public Task<IReadOnlyList<GameCompletion>?> GetUserCompletedGames(string userName)
     {
         var url = GetBaseUrl().User(userName);
-        return Get<IEnumerable<GameCompletion>>(url);
+        return Get<IReadOnlyList<GameCompletion>>(url);
     }
 
-    public async Task<IEnumerable<UserProfile>?> GetUsersIFollow(int count = 100, int offset = 0)
+    public async Task<IReadOnlyList<UserProfile>?> GetUsersIFollow(int count = 100, int offset = 0)
     {
         var url = GetBaseUrl().Count(count).Offset(offset);
         return await Get<List<UserProfile>>(url);
     }
 
-    public async Task<IEnumerable<UserProfile>?> GetUsersFollowingMe(int count = 100, int offset = 0)
+    public async Task<IReadOnlyList<UserProfile>?> GetUsersFollowingMe(int count = 100, int offset = 0)
     {
         var url = GetBaseUrl().Count(count).Offset(offset);
         return await Get<List<UserProfile>>(url);
@@ -80,22 +80,22 @@ public class RetroArchUserApi : RestServiceBase, IRetroArchUserApi
     }
 
 
-    public Task<IEnumerable<Achievement>?> GetUserRecentAchievements(string userName, int minutes = 60)
+    public Task<IReadOnlyList<Achievement>?> GetUserRecentAchievements(string userName, int minutes = 60)
     {
         var url = GetBaseUrl().User(userName).M(minutes);
-        return Get<IEnumerable<Achievement>>(url);
+        return Get<IReadOnlyList<Achievement>>(url);
     }
 
-    public Task<IEnumerable<Achievement>?> GetAchievementsEarnedBetween(string userName, DateTime start, DateTime end)
+    public Task<IReadOnlyList<Achievement>?> GetAchievementsEarnedBetween(string userName, DateTime start, DateTime end)
     {
         var url = GetBaseUrl().User(userName).F(start.ToEpoch()).T(end.ToEpoch());
-        return Get<IEnumerable<Achievement>>(url);
+        return Get<IReadOnlyList<Achievement>>(url);
     }
 
-    public Task<IEnumerable<Achievement>?> GetAchievementsEarnedOnDay(string userName, DateTime day)
+    public Task<IReadOnlyList<Achievement>?> GetAchievementsEarnedOnDay(string userName, DateTime day)
     {
         var url = GetBaseUrl().User(userName).Date(day);
-        return Get<IEnumerable<Achievement>>(url);
+        return Get<IReadOnlyList<Achievement>>(url);
     }
 
     public Task<GameInfoAndUserProgressResponse?> GetGameInfoAndUserProgress(string userName, int gameId, bool metadata = false)
@@ -116,16 +116,16 @@ public class RetroArchUserApi : RestServiceBase, IRetroArchUserApi
         return Get<UserAwardsResponse>(url);
     }
 
-    public Task<IEnumerable<UserClaim>?> GetUserClaims(string userName)
+    public Task<IReadOnlyList<UserClaim>?> GetUserClaims(string userName)
     {
         var url = GetBaseUrl().User(userName);
-        return Get<IEnumerable<UserClaim>>(url);
+        return Get<IReadOnlyList<UserClaim>>(url);
     }
 
-    public Task<IEnumerable<UserDetails>?> GetUserGameRankAndScore(string userName, int gameId)
+    public Task<IReadOnlyList<UserDetails>?> GetUserGameRankAndScore(string userName, int gameId)
     {
         var url = GetBaseUrl().User(userName).GameID(gameId);
-        return Get<IEnumerable<UserDetails>>(url);
+        return Get<IReadOnlyList<UserDetails>>(url);
     }
 
     public Task<UserPoints?> GetUserPoints(string userName)
@@ -134,10 +134,11 @@ public class RetroArchUserApi : RestServiceBase, IRetroArchUserApi
         return Get<UserPoints>(url);
     }
 
-    public Task<Dictionary<int, GameProgress>?> GetUserProgress(string userName, IEnumerable<int> achievementIds)
+    public Task<Dictionary<int, GameProgress>?> GetUserProgress(string userName, IReadOnlyList<int> achievementIds)
     {
         var url = GetBaseUrl().User(userName).I(string.Join(",", achievementIds.Select(x=>x.ToString())));
         return Get<Dictionary<int, GameProgress>>(url);
     }
+
 
 }

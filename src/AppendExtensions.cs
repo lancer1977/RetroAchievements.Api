@@ -47,6 +47,7 @@ public static class AppendExtensionsAlphabet
         return url + $"&t={value}";
     }
 }
+
 public static class AppendExtensions
 {
     public static int ToEpoch(this DateTime time)
@@ -60,29 +61,40 @@ public static class AppendExtensions
     public static string Id(this string url, int id)
     {
 
-        return url + $"&i={id}";
+        return $"{url}&i={id}";
+    }
+    // I
+    public static string Id(this string url, string id)
+    {
+
+        return $"{url}&i={id}";
+    }
+
+    public static string Type(this string url, int @type)
+    {
+        return $"{url}&t={type}";
     }
 
     // F
     public static string OfficialOnly(this string url, bool officialOnly)
     {
         var code = officialOnly ? "3" : "5";
-        return url + $"&f={code}";
+        return $"{url}&f={code}";
     }
 
     public static string AllUnlocks(this string url, bool allUnlocks)
     {
         var value = allUnlocks ? "5" : "3";
-        return url + $"&h={value}";
+        return $"{url}&h={value}";
     }
     public static string ParamBool(this string url, string param, bool value)
     {
         var result = value ? 1 : 0;
-        return url + $"&{param}={result}";
+        return $"{url}&{param}={result}";
     }
     public static string ParamString(this string url, string param, string value)
     {
-        return url + $"&{param}={value}";
+        return $"{url}&{param}={value}";
     }
 
     // Z
@@ -92,7 +104,8 @@ public static class AppendExtensions
         {
             return url;
         }
-        return url + $"&z={userName}";
+
+        return $"{url}&z={userName}";
     }
 
     // Y
@@ -102,17 +115,14 @@ public static class AppendExtensions
         {
             return url;
         }
-        return url + $"&y={apiKey}";
+
+        return $"{url}&y={apiKey}";
     }
-    
+
     // O
     public static string Offset(this string url, int? offset)
     {
-        if (offset == null)
-        {
-            return url;
-        }
-        return url + $"&o={offset}";
+        return offset == null ? url : $"{url}&o={offset}";
     }
 
     // C
@@ -122,7 +132,8 @@ public static class AppendExtensions
         {
             return url;
         }
-        return url + $"&c={count}";
+
+        return $"{url}&c={count}";
     }
 
     // G
@@ -132,7 +143,8 @@ public static class AppendExtensions
         {
             return url;
         }
-        return url + $"&g={gameId}";
+
+        return $"{url}&g={gameId}";
     }
     // G
     public static string GameID(this string url, int? gameId)
@@ -141,15 +153,16 @@ public static class AppendExtensions
         {
             return url;
         }
-        return url + $"&g={gameId}";
+
+        return $"{url}&g={gameId}";
     }
 
     // T
     public static string Masters(this string url, bool master)
-    { 
+    {
         var value = master ? "1" : "0";
 
-        return url + $"t=" + value;
+        return $"{url}t={value}";
     }
 
     // U
@@ -159,7 +172,8 @@ public static class AppendExtensions
         {
             return url;
         }
-        return url + $"&u={user}";
+
+        return $"{url}&u={user}";
     }
 
     // K
@@ -169,7 +183,8 @@ public static class AppendExtensions
         {
             return url;
         }
-        return url + $"&k={kinds}";
+
+        return $"{url}&k={kinds}";
     }
 
     // D
@@ -179,6 +194,7 @@ public static class AppendExtensions
         {
             return url;
         }
-        return url + $"&d={date:yyyy-MM-dd}";
+
+        return $"{url}&d={date:yyyy-MM-dd}";
     }
 }

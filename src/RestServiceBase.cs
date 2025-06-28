@@ -61,7 +61,7 @@ public class RestServiceBase
             Debug.WriteLine(responseString);
             try
             {
-                T obj = JsonSerializer.Deserialize<T>(responseString, this.Options);
+                T? obj = JsonSerializer.Deserialize<T>(responseString, this.Options);
                 return obj;
             }
             catch (Exception ex)

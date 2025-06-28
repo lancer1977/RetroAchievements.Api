@@ -1,34 +1,53 @@
 namespace PolyhydraGames.RetroAchievements.Users;
-public class GameInfoAndUserProgressResponse 
-{
-    public int ID { get; set; }
-    public string Title { get; set; }
-    public int ConsoleID { get; set; }
-    public int ForumTopicID { get; set; }
-    public object Flags { get; set; }
-    public string ImageIcon { get; set; }
-    public string ImageTitle { get; set; }
-    public string ImageIngame { get; set; }
-    public string ImageBoxArt { get; set; }
-    public string Publisher { get; set; }
-    public string Developer { get; set; }
-    public string Genre { get; set; }
-    public string Released { get; set; }
-    public string ReleasedAtGranularity { get; set; }
-    public bool IsFinal { get; set; }
-    public string RichPresencePatch { get; set; }
-    public object GuideURL { get; set; }
-    public string ConsoleName { get; set; }
-    public object ParentGameID { get; set; }
-    public int NumDistinctPlayers { get; set; }
-    public int NumAchievements { get; set; }
-    public Dictionary<int,AchievementProgress> Achievements { get; set; }
-    public int NumAwardedToUser { get; set; }
-    public int NumAwardedToUserHardcore { get; set; }
-    public int NumDistinctPlayersCasual { get; set; }
-    public int NumDistinctPlayersHardcore { get; set; }
-    public string UserCompletion { get; set; }
-    public string UserCompletionHardcore { get; set; }
-    public string HighestAwardKind { get; set; }
-    public DateTime? HighestAwardDate { get; set; }
-}
+
+public record GameInfoAndUserProgressResponse(
+    [property: JsonPropertyName("ID")] int ID,
+    [property: JsonPropertyName("Title")] string Title,
+    [property: JsonPropertyName("ConsoleID")] int ConsoleID,
+    [property: JsonPropertyName("ForumTopicID")] int ForumTopicID,
+    [property: JsonPropertyName("Flags")] object Flags,
+    [property: JsonPropertyName("ImageIcon")] string ImageIcon,
+    [property: JsonPropertyName("ImageTitle")] string ImageTitle,
+    [property: JsonPropertyName("ImageIngame")] string ImageIngame,
+    [property: JsonPropertyName("ImageBoxArt")] string ImageBoxArt,
+    [property: JsonPropertyName("Publisher")] string Publisher,
+    [property: JsonPropertyName("Developer")]
+    string Developer,
+    [property: JsonPropertyName("Genre")] string Genre,
+    [property: JsonPropertyName("Released")]
+    string Released,
+    [property: JsonPropertyName("ReleasedAtGranularity")]
+    string ReleasedAtGranularity,
+    [property: JsonPropertyName("IsFinal")]
+    bool IsFinal,
+    [property: JsonPropertyName("RichPresencePatch")]
+    string RichPresencePatch,
+    [property: JsonPropertyName("GuideURL")]
+    object GuideURL,
+    [property: JsonPropertyName("ConsoleName")]
+    string ConsoleName,
+    [property: JsonPropertyName("ParentGameID")]
+    object ParentGameID,
+    [property: JsonPropertyName("NumDistinctPlayers")]
+    int NumDistinctPlayers,
+    [property: JsonPropertyName("NumAchievements")]
+    int NumAchievements,
+    [property: JsonPropertyName("Achievements")]
+    Dictionary<string, Achievment> Achievements,
+    [property: JsonPropertyName("NumAwardedToUser")]
+    int NumAwardedToUser,
+    [property: JsonPropertyName("NumAwardedToUserHardcore")]
+    int NumAwardedToUserHardcore,
+    [property: JsonPropertyName("NumDistinctPlayersCasual")]
+    int NumDistinctPlayersCasual,
+    [property: JsonPropertyName("NumDistinctPlayersHardcore")]
+    int NumDistinctPlayersHardcore,
+    [property: JsonPropertyName("UserCompletion")]
+    string UserCompletion,
+    [property: JsonPropertyName("UserCompletionHardcore")]
+    string UserCompletionHardcore,
+    [property: JsonPropertyName("HighestAwardKind")]
+    string HighestAwardKind,
+    [property: JsonPropertyName("HighestAwardDate")]
+    DateTime HighestAwardDate
+);

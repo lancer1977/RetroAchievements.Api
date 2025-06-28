@@ -1,14 +1,9 @@
 namespace PolyhydraGames.RetroAchievements.Users;
-public class VisibleUserAward
-{
-    public DateTime AwardedAt { get; set; }
-    public string AwardType { get; set; }
-    public int AwardData { get; set; }
-    public int AwardDataExtra { get; set; }
-    public int DisplayOrder { get; set; }
-    public string Title { get; set; }
-    public int? ConsoleID { get; set; }
-    public string ConsoleName { get; set; }
-    public int? Flags { get; set; }
-    public string ImageIcon { get; set; }
-}
+
+public record UserDetails(
+    [property: JsonPropertyName("User")] string User,
+    [property: JsonPropertyName("ULID")] string ULID,
+    [property: JsonPropertyName("UserRank")] int UserRank,
+    [property: JsonPropertyName("TotalScore")] int TotalScore,
+    [property: JsonPropertyName("LastAward")] DateTime LastAward
+);

@@ -30,11 +30,5 @@
 	</ItemGroup>
 
  
-	<ItemGroup>
-	  <Folder Include="Leaderboards\" />
-	  <Folder Include="Comments\" />
-	</ItemGroup>
-
- 
  
 </Project>

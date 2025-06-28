@@ -12,21 +12,21 @@ public class RetroArchFeedApi : RestServiceBase, IRetroArchFeedApi
         return Get<RecentGameAwardResponse>(url);
     }
 
-    public Task<IEnumerable<ActiveClaim>?> GetClaims()
+    public Task<IReadOnlyList<ActiveClaim>?> GetClaims()
     {
         var url = GetBaseUrl();
-        return Get<IEnumerable<ActiveClaim>>(url);
+        return Get<IReadOnlyList<ActiveClaim>>(url);
     }
 
-    public Task<IEnumerable<RankedUser>?> GetTopTenUsers()
+    public Task<IReadOnlyList<RankedUser>?> GetTopTenUsers()
     {
         var url = GetBaseUrl();
-        return Get<IEnumerable<RankedUser>>(url);
+        return Get<IReadOnlyList<RankedUser>>(url);
     }
 
-    public Task<IEnumerable<ActiveClaim>?> GetActiveClaims()
+    public Task<IReadOnlyList<ActiveClaim>?> GetActiveClaims()
     {
         var url = GetBaseUrl();
-        return Get<IEnumerable<ActiveClaim>>(url);
+        return Get<IReadOnlyList<ActiveClaim>>(url);
     }
 }

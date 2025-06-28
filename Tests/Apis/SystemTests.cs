@@ -10,7 +10,7 @@ public class TicketTests : BaseTests
     [SetUp]
     public void Setup()
     {
-        Api = new RetroArchTicketApi(Config, new HttpClient());
+        Api = new RetroAchievementTicketApi(Config, new HttpClient());
     }
 
     [Test]

@@ -7,6 +7,7 @@ public abstract class BaseTests
     private IConfiguration _configuration;
     public ICheevoAuth Config { get; set; }
     protected string TestUser = "dreadbreadcrumb";
+    protected string TestUserNekro = "nekrog";
     protected const int TestGameId = 6205; 
     public BaseTests()
     {
@@ -25,6 +26,9 @@ public abstract class BaseTests
 
     }
 
-
+    protected void Write(string line)
+    {
+        Console.WriteLine(line);
+    }
 
 }
