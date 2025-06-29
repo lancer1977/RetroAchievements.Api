@@ -1,6 +1,6 @@
 
 
-namespace PolyhydraGames.RetroAchievements.Games; public interface IRetroArchGameApi
+namespace PolyhydraGames.RetroAchievements.Games; public interface IRetroAchievementGameApi
 {
     ValueTask<GameResponse> GetGame(int gameID);
     Task<GameExtendedResponse> GetGameExtended(int gameID, bool officialAchievements = false);

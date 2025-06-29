@@ -1,5 +1,5 @@
 namespace PolyhydraGames.RetroAchievements.Events;
-public class EventApi : RestServiceBase, IRetroArchEventApi
+public class EventApi : RestServiceBase, IRetroAchievementEventApi
 {
 
     public EventApi(ICheevoAuth authConfig, HttpClient client) : base(authConfig, client)

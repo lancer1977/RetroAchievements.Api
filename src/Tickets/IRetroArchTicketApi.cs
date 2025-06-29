@@ -1,5 +1,5 @@
 namespace PolyhydraGames.RetroAchievements.Tickets;
-public interface IRetroArchTicketApi
+public interface IRetroAchievementTicketApi
 {
     Task<TicketData> GetTicketDataById(int id);
     Task<TicketData> GetTicketData(int id, int count = 10, int offset = 0);

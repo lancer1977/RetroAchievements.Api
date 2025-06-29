@@ -5,14 +5,14 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
-		<Title>Retroarch Cheevos</Title>
+		<Title>RetroAchievement Cheevos</Title>
 		<Authors>Dread Breadcrumb</Authors>
-		<Description>A C# wrapper for the Retroarch Cheevo rest API</Description>
+		<Description>A C# wrapper for the RetroAchievement Cheevo rest API</Description>
 		<Copyright>2024</Copyright>
-		<PackageProjectUrl>https://github.com/lancer1977/retroarch_cheevos</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/lancer1977/retroarch_cheevos</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/lancer1977/RetroAchievement_cheevos</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/lancer1977/RetroAchievement_cheevos</RepositoryUrl>
 		<RepositoryType>git</RepositoryType> 
-		<PackageId>PolyhydraGames.Retroarch.Cheevos</PackageId> 
+		<PackageId>PolyhydraGames.RetroAchievement.Cheevos</PackageId> 
 	</PropertyGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">

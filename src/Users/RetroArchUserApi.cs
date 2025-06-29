@@ -1,9 +1,9 @@
 namespace PolyhydraGames.RetroAchievements.Users;
 
-public class RetroArchUserApi : RestServiceBase, IRetroArchUserApi
+public class RetroAchievementUserApi : RestServiceBase, IRetroAchievementUserApi
 {
 
-    public RetroArchUserApi(ICheevoAuth authConfig, HttpClient client) : base(authConfig, client)
+    public RetroAchievementUserApi(ICheevoAuth authConfig, HttpClient client) : base(authConfig, client)
     {
     }
 

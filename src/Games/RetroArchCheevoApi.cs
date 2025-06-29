@@ -2,11 +2,11 @@
 
 namespace PolyhydraGames.RetroAchievements.Games;
 
-public class RetroArchCheevoApi : RestServiceBase, IRetroArchGameApi
+public class RetroAchievementCheevoApi : RestServiceBase, IRetroAchievementGameApi
 {
     public Dictionary<int, GameResponse> GameCache = new();
 
-    public RetroArchCheevoApi(ICheevoAuth authConfig, HttpClient client) : base(authConfig, client)
+    public RetroAchievementCheevoApi(ICheevoAuth authConfig, HttpClient client) : base(authConfig, client)
     {
     }
 

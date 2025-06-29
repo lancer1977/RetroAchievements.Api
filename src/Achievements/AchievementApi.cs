@@ -1,6 +1,6 @@
 namespace PolyhydraGames.RetroAchievements.Achievements
 {
-    public class AchievementApi : RestServiceBase, IRetroArchAchievementApi
+    public class AchievementApi : RestServiceBase, IRetroAchievementAchievementApi
     {
         public AchievementApi(ICheevoAuth authConfig, HttpClient client) : base(authConfig, client) { }
 

@@ -3,7 +3,7 @@
 namespace PolyhydraGames.RetroAchievements.Users;
 // Root myDeserializedClass = JsonSerializer.Deserialize<List<Root>>(myJsonResponse);
 
-public interface IRetroArchUserApi
+public interface IRetroAchievementUserApi
 {
     Task<IReadOnlyList<RecentGame>?> GetUserWantToPlayList(string userName, int count = 50, int offset = 0);
     Task<UserProfile> GetUserProfile(string userName);

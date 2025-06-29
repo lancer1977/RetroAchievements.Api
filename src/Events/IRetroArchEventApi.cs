@@ -1,5 +1,5 @@
 namespace PolyhydraGames.RetroAchievements.Events;
-public interface IRetroArchEventApi
+public interface IRetroAchievementEventApi
 {
     Task<EventResponse> GetAchievementOfTheWeek();
 }

@@ -2,7 +2,7 @@ using PolyhydraGames.RetroAchievements.Systems;
 
 namespace PolyhydraGames.RetroAchievements.Tickets;
 
-public class RetroAchievementTicketApi : RestServiceBase, IRetroArchTicketApi
+public class RetroAchievementTicketApi : RestServiceBase, IRetroAchievementTicketApi
 {
     private List<GameAndHashResponse> _cache;
     public RetroAchievementTicketApi(ICheevoAuth authConfig, HttpClient client) : base(authConfig, client) { }

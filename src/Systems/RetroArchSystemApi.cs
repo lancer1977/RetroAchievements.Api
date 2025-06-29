@@ -1,11 +1,11 @@
 
 namespace PolyhydraGames.RetroAchievements.Systems;
 
-public class RetroArchSystemApi : RestServiceBase, IRetroArchSystemApi
+public class RetroAchievementSystemApi : RestServiceBase, IRetroAchievementSystemApi
 {
     private static Dictionary<int, GameAndHashResponse> _cache = new Dictionary<int, GameAndHashResponse>();
     public static ConsoleIDsResponse? ConsolesCache { get; private set; }
-    public RetroArchSystemApi(ICheevoAuth authConfig, HttpClient client) : base(authConfig, client) { }
+    public RetroAchievementSystemApi(ICheevoAuth authConfig, HttpClient client) : base(authConfig, client) { }
     public async ValueTask<ConsoleIDsResponse> GetConsoleIDs()
     {
         if (ConsolesCache != null && ConsolesCache.Any()) return ConsolesCache;
