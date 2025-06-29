@@ -3,7 +3,7 @@ using PolyhydraGames.RetroAchievements.Achievements;
 namespace PolyhydraGames.RACheevos.Test.Apis;
 public class AchievementTests : BaseTests
 {
-    public IRetroArchAchievementApi Api { get; set; }
+    public IRetroAchievementAchievementApi Api { get; set; }
     [SetUp]
     public void Setup()
     {

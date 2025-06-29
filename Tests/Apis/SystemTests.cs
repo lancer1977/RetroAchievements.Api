@@ -5,7 +5,7 @@ namespace PolyhydraGames.RACheevos.Test.Apis;
 
 public class TicketTests : BaseTests
 {
-    public IRetroArchTicketApi Api { get; set; }
+    public IRetroAchievementTicketApi Api { get; set; }
 
     [SetUp]
     public void Setup()
@@ -66,12 +66,12 @@ public class TicketTests : BaseTests
 
 public class SystemTests : BaseTests
 {
-    public IRetroArchSystemApi Api { get; set; }
+    public IRetroAchievementSystemApi Api { get; set; }
 
     [SetUp]
     public void Setup()
     {
-        Api = new RetroArchSystemApi(Config, new HttpClient());
+        Api = new RetroAchievementSystemApi(Config, new HttpClient());
     }
 
     [Test]

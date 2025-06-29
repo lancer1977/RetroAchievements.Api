@@ -7,11 +7,11 @@ namespace PolyhydraGames.RACheevos.Test.Apis;
 
 public class UserTests : BaseTests
 {
-    private IRetroArchUserApi Api { get; set; }
+    private IRetroAchievementUserApi Api { get; set; }
 
     public UserTests()
     {
-        Api = new RetroArchUserApi(Config, new HttpClient());
+        Api = new RetroAchievementUserApi(Config, new HttpClient());
     }
 
     [Test]

@@ -5,7 +5,7 @@ namespace PolyhydraGames.RACheevos.Test.Apis;
 
 public class EventTests : BaseTests
 {
-    public IRetroArchEventApi Api { get; set; }
+    public IRetroAchievementEventApi Api { get; set; }
     [SetUp]
     public void Setup()
     {

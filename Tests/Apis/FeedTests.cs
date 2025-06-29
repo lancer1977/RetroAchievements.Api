@@ -4,11 +4,11 @@ namespace PolyhydraGames.RACheevos.Test.Apis;
 
 public class FeedTests : BaseTests
 {
-    private IRetroArchFeedApi Api { get; set; }
+    private IRetroAchievementFeedApi Api { get; set; }
 
     public FeedTests()
     {
-        Api = new RetroArchFeedApi(Config, new HttpClient());
+        Api = new RetroAchievementFeedApi(Config, new HttpClient());
     }
 
     [Test]

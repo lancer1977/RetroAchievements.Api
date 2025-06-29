@@ -6,13 +6,13 @@ namespace PolyhydraGames.RACheevos.Test.Apis;
 public class GameTests : BaseTests
 {
 
-    public IRetroArchGameApi Api { get; set; }
+    public IRetroAchievementGameApi Api { get; set; }
 
 
 
     public GameTests()
     {
-        Api = new RetroArchCheevoApi(Config, new HttpClient());
+        Api = new RetroAchievementCheevoApi(Config, new HttpClient());
     }
 
     [TestCase(TestGameId)]
