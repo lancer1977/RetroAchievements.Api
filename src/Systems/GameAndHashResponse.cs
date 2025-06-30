@@ -1,6 +1,7 @@
 namespace PolyhydraGames.RetroAchievements.Systems;
 
-public class GameAndHashResponse : List<GameAndHash>;
+public class GameAndHashResponse : List<GameAndHash> { };
+
 public record GameAndHash(
     [property: JsonPropertyName("Title")] string Title,
     [property: JsonPropertyName("ID")] int ID,
