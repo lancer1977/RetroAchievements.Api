@@ -11,7 +11,7 @@ public record GameAndHash(
     [property: JsonPropertyName("NumAchievements")] int NumAchievements,
     [property: JsonPropertyName("NumLeaderboards")] int NumLeaderboards,
     [property: JsonPropertyName("Points")] int Points,
-    [property: JsonPropertyName("DateModified")] DateTime DateModified,
-    [property: JsonPropertyName("ForumTopicID")] int ForumTopicID,
-    [property: JsonPropertyName("Hashes")] IReadOnlyList<string> Hashes
+    [property: JsonPropertyName("DateModified")] DateTime? DateModified,
+    [property: JsonPropertyName("ForumTopicID")] int? ForumTopicID,
+    [property: JsonPropertyName("Hashes")] IReadOnlyList<string>? Hashes
 );

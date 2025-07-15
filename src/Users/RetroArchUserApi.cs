@@ -49,7 +49,7 @@ public class RetroAchievementUserApi : RestServiceBase, IRetroAchievementUserApi
         return Get<IReadOnlyList<RecentGame>>(url);
     }
 
-    public Task<UserSummaryResponse?> GetUserSummary(string userName, int gameCount = 0, int achievementCount = 10)
+    public Task<UserSummaryResponse?> GetUserSummary(string userName, int gameCount = 2, int achievementCount = 10)
     {
         var url = GetBaseUrl().User(userName).G(gameCount).A(achievementCount);
         return Get<UserSummaryResponse>(url);

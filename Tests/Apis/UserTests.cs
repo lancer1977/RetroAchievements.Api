@@ -155,7 +155,7 @@ public class UserTests : BaseTests
     [Test]
     public async Task GetUserSummary()
     {
-        var result = await Api.GetUserSummary(TestUser);
+        var result = await Api.GetUserSummary(TestUserNekro);
         WriteLine(result.ToJson());
         Assert.That(result.LastGameID > 0);
     }
