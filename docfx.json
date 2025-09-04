@@ -4,7 +4,7 @@
     {
       "src": [
         {
-          "src": "../src",
+          "src": "src",
           "files": [
             "**/*.csproj"
           ]
@@ -27,7 +27,8 @@
     "resource": [
       {
         "files": [
-          "images/**"
+          "images/**",
+          "details.json"
         ]
       }
     ],
