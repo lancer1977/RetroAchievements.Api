@@ -1,0 +1,12 @@
+   {
+  "id": "api_retroachievements",
+  "title": "API.RetroAchievements",
+  "summary": "Joystick To Signal R Joystick",
+  "docsHref": "/api_retroachievements/index.html",
+  "imageHref": "/api_retroachievements/images/logo.png",
+  "repoHref": "https://github.com/lancer1977/RetroAchievements.Api",
+  "version": "1.0.0",
+  "tags": ["signalr"],
+  "updated": "2025-09-01",
+  "color": "#f39c12"
+}
